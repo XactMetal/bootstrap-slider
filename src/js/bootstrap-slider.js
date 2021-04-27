@@ -2005,7 +2005,8 @@ const windowIsDefined = (typeof window === "object");
 						offsetTop -= obj.scrollTop;
 					}
 				}
-				return offsetTop;
+				// Xact metal: fix for window scrolled vertically
+				return offsetTop + window.scrollY;
 			},
 			_offset: function (obj) {
 				return {

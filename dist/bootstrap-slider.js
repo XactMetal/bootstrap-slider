@@ -1957,7 +1957,8 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 						offsetTop -= obj.scrollTop;
 					}
 				}
-				return offsetTop;
+				// Xact metal: fix for window scrolled vertically
+				return offsetTop + window.scrollY;
 			},
 			_offset: function _offset(obj) {
 				return {
